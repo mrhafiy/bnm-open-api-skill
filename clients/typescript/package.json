@@ -1,0 +1,19 @@
+{
+  "name": "bnm-open-api",
+  "version": "0.1.0",
+  "description": "Unofficial minimal TypeScript client for the Bank Negara Malaysia (BNM) Open API",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": ["dist/src"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/test/bnm.test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

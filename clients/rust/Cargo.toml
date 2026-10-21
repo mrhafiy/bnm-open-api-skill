@@ -1,0 +1,27 @@
+[package]
+name = "bnm-open-api"
+version = "0.1.0"
+edition = "2021"
+description = "Unofficial minimal client for the Bank Negara Malaysia (BNM) Open API"
+license = "MIT"
+readme = "README.md"
+
+[lib]
+name = "bnm"
+path = "src/lib.rs"
+
+[[bin]]
+name = "bnm"
+path = "src/main.rs"
+required-features = ["ureq-transport", "json"]
+
+[features]
+default = ["ureq-transport", "json"]
+# Blocking HTTPS transport backed by ureq.
+ureq-transport = ["dep:ureq"]
+# Client::get_json returning serde_json values.
+json = ["dep:serde_json"]
+
+[dependencies]
+ureq = { version = "2", optional = true }
+serde_json = { version = "1", optional = true }

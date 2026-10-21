@@ -1,0 +1,21 @@
+# Shared core behavior exercised by each language client's native tests.
+accept_header	application/vnd.BNM.API.v1+json
+valid_path	opr/year/2025
+valid_path	msb/3.5.12a
+valid_path	exchange-rate/USD
+valid_path	/opr/
+invalid_path	
+invalid_path	../etc/passwd
+invalid_path	http://evil.example/x
+invalid_path	opr?x=1
+invalid_path	a b
+invalid_path	a//b
+not_found_status	404
+retry_status	429
+retry_status	500
+retry_status	502
+retry_status	503
+retry_status	504
+retry_attempts	2
+other_status	403
+response_body	{"data":{"new_opr_level":2.75},"meta":{}}
